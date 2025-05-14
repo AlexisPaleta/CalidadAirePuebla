@@ -6,6 +6,9 @@ notebooks/api/
 notebooks/csv/
 notebooks/.ipynb_checkpoints/
 
+# Cache
+app/utils/__pycache__/
+
 # mediciones sinaica json
 models/
 
