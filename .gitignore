@@ -1,5 +1,15 @@
-#  Datos api
-data/api/
+#  Datos
+data/
 
 # API
 notebooks/api/
+notebooks/csv/
+notebooks/.ipynb_checkpoints/
+
+# mediciones sinaica json
+models/
+
+# Env
+.env
+
+
