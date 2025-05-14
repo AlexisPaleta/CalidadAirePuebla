@@ -5,6 +5,9 @@ data/
 notebooks/api/
 notebooks/.ipynb_checkpoints/
 
+# CSV
+notebooks/csv/
+
 # Cache
 app/utils/__pycache__/
 
