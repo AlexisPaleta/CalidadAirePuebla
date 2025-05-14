@@ -3,7 +3,6 @@ data/
 
 # API
 notebooks/api/
-notebooks/csv/
 notebooks/.ipynb_checkpoints/
 
 # Cache
