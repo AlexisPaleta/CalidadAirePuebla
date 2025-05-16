@@ -7,7 +7,7 @@ import pandas as pd
 
 
 # Cargar estaciones (una sola vez al inicio)
-estaciones = pd.read_csv("../app/data/estaciones-Puebla_sinaica.csv")
+estaciones = pd.read_csv("app/data/estaciones-Puebla_sinaica.csv")
 
 
 def mapa(df_media, contaminante):
