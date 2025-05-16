@@ -80,9 +80,9 @@ def main():
 
     if all_data:
         df = pd.DataFrame(all_data, columns=COLUMNS)
-        existe = os.path.exists(f'data/final/{OUTPUT_CSV}')
-        df.to_csv(f'../../../data/final/{OUTPUT_CSV}', mode='a', index=False, header=False)
-        print(f"\n✅ Día agregado a 'data/final/{OUTPUT_CSV}' con {len(df)} nuevas filas.")
+        existe = os.path.exists(f'datos/final/{OUTPUT_CSV}')
+        df.to_csv(f'datos/final/{OUTPUT_CSV}', mode='a', index=False, header=False)
+        print(f"\n✅ Día agregado a 'datos/final/{OUTPUT_CSV}' con {len(df)} nuevas filas.")
     else:
         print("\n⚠️ No se recuperaron datos.")
 
