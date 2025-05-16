@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 from utils.data_loader import cargar_datos_dia_anterior
-from utils.graficos import concentracion_horaria_heatmap, concentracion_horaria
+from utils.graficos import concentracion_horaria_heatmap, concentracion_horaria, area_horaria_estacion
 from utils.mapa import mapa
 from utils.levels_contaminacion import menu_contaminante
 
@@ -128,18 +128,17 @@ with col1:
     except:
         st.warning("No se pudo calcular el punto más crítico por falta de datos.")
 
-    tipo_grafico = st.radio(
-        "📊 Tipo de gráfico a mostrar:",
-        ['Gráfico de líneas', 'Mapa de calor'],
-        horizontal=True
-    )
 
-    if tipo_grafico == 'Gráfico de líneas':
+    tabs = st.tabs(["Gráfico de líneas", "Mapa de calor", "Area apilada diaria"])
+    with tabs[0]:
         st.markdown(f"#### 📈 Evolución horaria de `{selection}`")
         concentracion_horaria(df, selection)
-    else:
+    with tabs[1]:
         st.markdown(f"#### 🔥 Mapa de calor de `{selection}`")
         concentracion_horaria_heatmap(df, selection)
+    with tabs[2]:
+        st.markdown(f"#### 📊 Área apilada diaria de `{selection}`")
+        area_horaria_estacion(df, selection)
 
 with col2:
     st.markdown(f"#### 🗺️ Distribución por estación para `{selection}`")
