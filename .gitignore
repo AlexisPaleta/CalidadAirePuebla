@@ -1,20 +1,6 @@
-#  Datos
-datos/
-
-# API
-notebooks/api/
-notebooks/.ipynb_checkpoints/
-
-# CSV
-notebooks/csv/
 
 # Cache
 app/utils/__pycache__/
 
-# mediciones sinaica json
-models/
-
-# Env
-.env
 
 

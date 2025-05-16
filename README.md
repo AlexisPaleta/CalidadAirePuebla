@@ -10,7 +10,7 @@ Este proyecto tiene como objetivo analizar los datos de la calidad del aire en l
 ## Instalación
 1. Clona este repositorio:
    ```bash
-   git clone <URL-del-repositorio>
+   git clone https://github.com/victormanuelmcrz/machine-learning.git
    cd machine-learning
    ```
 2. Instala las dependencias:
@@ -41,4 +41,5 @@ Este proyecto tiene como objetivo analizar los datos de la calidad del aire en l
 Este proyecto está abierto a colaboraciones y sugerencias. Puedes modificar esta sección según tus necesidades futuras.
 
 ## Licencia
-[Agregar licencia aquí]
+MIT
+
