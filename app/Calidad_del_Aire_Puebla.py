@@ -14,19 +14,19 @@ st.set_page_config(
 )
 
 # =======================
-# 🧠 Encabezado
+# Encabezado
 # =======================
 st.title("💨 Calidad del Aire en Puebla - Día Anterior")
 st.caption("Último análisis con datos por estación, contaminante y hora. Incluye visualización y evaluación diaria.")
 
 # ========================
-# 📥 Carga y limpieza de datos
+# Carga y limpieza de datos
 # ========================
 df = cargar_datos_dia_anterior()
 df = df.drop(columns=['O3_8hrs'])
 
 # ========================
-# 📌 Estadísticas por estación
+# Estadísticas por estación
 # ========================
 media_por_estacion = df.groupby('Estacion').mean()
 media_por_estacion = media_por_estacion.drop(columns=['DateTime', 'Anio', 'Mes', 'Dia', 'Hora'])
@@ -36,7 +36,7 @@ with st.expander("🔍 Ver tabla de promedios por estación"):
     st.dataframe(media_por_estacion, use_container_width=True)
 
 # ========================
-# 🌤️ Evaluación por estación y contaminante
+# Evaluación por estación y contaminante
 # ========================
 st.markdown("### 🌤️ Evaluación por estación y contaminante")
 
@@ -74,14 +74,14 @@ except Exception as e:
     st.text(str(e))
 
 # ========================
-# 🔍 Contaminante más crítico automáticamente
+# Contaminante más crítico automáticamente
 # ========================
 contaminantes = ['O3', 'NO2', 'CO', 'SO2', 'PM10', 'PM2_5']
 contaminante_default = max(contaminantes, key=lambda c: df[c].mean())
 selection = st.selectbox("🧪 Selecciona el contaminante a analizar:", contaminantes, index=contaminantes.index(contaminante_default))
 
 # ========================
-# 📊 Métricas generales
+# Métricas generales
 # ========================
 st.markdown("### 📊 Métricas generales del día")
 media_general = df[selection].mean()
@@ -94,7 +94,7 @@ col_b.metric("Máximo diario", f"{maximo:.3f} ppm")
 col_c.metric("Mínimo diario", f"{minimo:.3f} ppm")
 
 # ========================
-# 📊 Comparación + Mapa en columnas
+# Comparación + Mapa en columnas
 # ========================
 st.markdown("### 🌡️ Comparación Horaria y Mapa Interactivo")
 col1, col2 = st.columns([1, 1])

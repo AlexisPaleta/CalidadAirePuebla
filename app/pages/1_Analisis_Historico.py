@@ -73,7 +73,7 @@ def metricas_anuales(df, contaminante, anio):
 
 
 # ============================
-# ⚙️ Parámetros generales
+# Parámetros generales
 # ============================
 contaminantes = ['O3', 'NO2', 'CO', 'SO2', 'PM10', 'PM2_5']
 estaciones = {'santa', 'bine', 'ninfas', 'utp', 'vel'}
@@ -85,7 +85,7 @@ estaciones_seleccionadas = st.sidebar.multiselect("Estaciones", list(estaciones)
 periodo = st.sidebar.radio("Periodo", ["Día", "Mes", "Año", "Comparación Anual"], horizontal=False)
 
 # ============================
-# 📆 Día
+# Día
 # ============================
 if periodo == "Día":
     st.markdown("## 📆 Análisis Diario")
@@ -119,7 +119,7 @@ if periodo == "Día":
             area_horaria_estacion(df_filtrado, contaminante)
 
 # ============================
-# 📅 Mes
+# Mes
 # ============================
 elif periodo == "Mes":
     st.markdown("## 🗓️ Análisis Mensual")
@@ -157,7 +157,7 @@ elif periodo == "Mes":
             area_apilada_diaria(df_filtrado, contaminante, estaciones_seleccionadas, mes)
 
 # ============================
-# 📊 Año
+# Año
 # ============================
 elif periodo == "Año":
     st.markdown("## 📊 Análisis Anual")
@@ -193,7 +193,7 @@ elif periodo == "Año":
             boxplot(df_filtrado, contaminante, estaciones_seleccionadas)
 
 # ============================
-# 🔁 Comparación Anual
+# Comparación Anual
 # ============================
 elif periodo == "Comparación Anual":
     st.markdown("## 🔁 Comparación entre Años")
@@ -247,7 +247,7 @@ elif periodo == "Comparación Anual":
             boxplot_comparativo_anual(df_filtrado_1, df_filtrado_2, contaminante, anio_1, anio_2)
 
 # ============================
-# 📥 Exportación
+# Exportación
 # ============================
 if 'df_filtrado' in locals() and not df_filtrado.empty:
     st.download_button(
