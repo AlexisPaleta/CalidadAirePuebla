@@ -3,4 +3,5 @@
 app/utils/__pycache__/
 
 
-
+# Notebook especifico
+Notebook/04_Prediccion.ipynb
