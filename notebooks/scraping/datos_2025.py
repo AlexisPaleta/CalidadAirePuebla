@@ -8,11 +8,11 @@ import time
 URL = 'https://calidaddelaire.puebla.gob.mx/views/reportes_monitoreo.php'
 ESTACIONES = ['santa', 'bine', 'ninfas', 'utp', 'vel']
 COLUMNS = ['Fecha', 'Hora', 'O3', 'O3 8hrs', 'NO2', 'CO', 'SO2', 'PM-10', 'PM-2.5', 'Estacion']
-OUTPUT_CSV = 'datos_2025.csv'
+OUTPUT_CSV = 'data/Crudos/datos_2025.csv'
 
 # Fechas de todo el 2025
 start_date = datetime(2025, 1, 1)
-end_date = datetime(2025, 5, 12)
+end_date = datetime(2025, 5, 27)
 FECHAS = [(start_date + timedelta(days=i)).strftime('%Y-%m-%d') for i in range((end_date - start_date).days + 1)]
 
 def abrir_modal(page):
