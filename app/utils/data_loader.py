@@ -8,12 +8,24 @@ def cargar_datos(path):
 
 
 def cargar_datos_dia_anterior():
-    df = pd.read_csv(f"data/Clean/datos_Clean_2025.csv")
-    df['DateTime'] = pd.to_datetime(df['DateTime'])
+    """Carga los datos correspondientes al día anterior.
 
+    La función selecciona automáticamente el archivo CSV según el año
+    obtenido de ``ayer.year``. Si el archivo no existe, se lanza un
+    ``FileNotFoundError`` con un mensaje descriptivo.
+    """
     ayer = (datetime.today() - timedelta(days=1)).date()
-    df_ayer = df[df['DateTime'].dt.date == ayer]
+    ruta = f"data/Clean/datos_Clean_{ayer.year}.csv"
 
+    try:
+        df = pd.read_csv(ruta)
+    except FileNotFoundError as e:
+        raise FileNotFoundError(
+            f"No se encontró el archivo de datos para el año {ayer.year}: {ruta}"
+        ) from e
+
+    df['DateTime'] = pd.to_datetime(df['DateTime'])
+    df_ayer = df[df['DateTime'].dt.date == ayer]
     return df_ayer
 
 def cargar_datos_por_anio(anio):
