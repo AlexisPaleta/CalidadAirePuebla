@@ -35,7 +35,6 @@ Este proyecto analiza datos históricos y actuales de la calidad del aire en Pue
 - `app/` — Aplicación interactiva (Streamlit) para visualización y consulta.
   - `pages/` — Páginas de la app (análisis histórico, tendencias, alertas, etc).
   - `utils/` — Funciones auxiliares para carga, gráficos, mapas y niveles de contaminación.
-- `results/` — Visualizaciones y salidas de modelos.
 - `requirements.txt` — Dependencias globales del proyecto.
 
 ## Instalación
