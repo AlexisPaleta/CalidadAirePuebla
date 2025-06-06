@@ -55,7 +55,7 @@ Este proyecto analiza datos históricos y actuales de la calidad del aire en Pue
 
 ## Uso
 
-- **Notebooks:** Ejecuta los notebooks en `notebooks/` para análisis exploratorio, limpieza y modelado.
+- **Notebooks:** Ejecuta los notebooks en `notebooks/` para análisis exploratorio, limpieza y modelado. El cuaderno `04_series_temporales.ipynb` ejemplifica la carga de datos históricos y un modelo ARIMA básico para pronosticar contaminantes.
 - **App interactiva:**
   ```bash
   cd app
